@@ -1,0 +1,35 @@
+<h1>Listing apicruds</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sku</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Amount</th>
+      <th>Price</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @apicruds.each do |apicrud| %>
+      <tr>
+        <td><%= apicrud.sku %></td>
+        <td><%= apicrud.name %></td>
+        <td><%= apicrud.description %></td>
+        <td><%= apicrud.amount %></td>
+        <td><%= apicrud.price %></td>
+        <td><%= link_to 'Show', apicrud %></td>
+        <td><%= link_to 'Edit', edit_apicrud_path(apicrud) %></td>
+        <td><%= link_to 'Destroy', apicrud, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Apicrud', new_apicrud_path %>
