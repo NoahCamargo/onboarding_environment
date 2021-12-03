@@ -21,29 +21,13 @@ rails server
 `INDEX GET /`
 
 ###Response
-	[
-		  {
-		    "sku": 0,
-		    "name": "test,
-		    "description": "product test",
-		    "price": 8.0,
-		    "qtd": 2.0
-		  }
-		  
-		  ...
-	]
+[{"sku": 0,"name": "test,"description": "product test","price": 8.0,"qtd": 2.0}, ...]
 	
 `PRODUCT GET /product/:sku`
 
 ###Response
 	
-	  {
-	    "sku": 5,
-	    "name": "test,
-	    "description": "product test",
-	    "price": 8.0,
-	    "qtd": 2.0
-	  }
+{"sku": 5,"name": "test,"description": "product test","price": 8.0,"qtd": 2.0}
 		  
 ##POST  
 
