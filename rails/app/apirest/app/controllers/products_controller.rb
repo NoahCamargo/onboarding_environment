@@ -2,15 +2,8 @@ class ProductsController < ApplicationController
   before_action :set_product, except: %i[create index]
   skip_before_filter :verify_authenticity_token
 
-
   def index
-    @products = Product.all
-    if @products
-
-      render json: view_context.index_json(@products)
-    else
-      render json: {}
-    end
+    render json: view_context.index_json(Product.all)
   end
 
   def show
@@ -22,7 +15,7 @@ class ProductsController < ApplicationController
     if @product.save
       render json: view_context.show_json(@product.to_json)
     else
-      render json: { 'menssage' => 'Creation falield' }
+      render json: { 'menssage' => @product.errors }
     end
   end
 

@@ -11134,3 +11134,16 @@ Processing by ProductsController#create as */*
   MOPED: 127.0.0.1:27017 INSERT       database=myapp_development collection=products documents=[{"_id"=>BSON::ObjectId('61ae384477161b002b00000f'), "sku"=>"12hye563j", "name"=>"Produto teste", "description"=>"É um produto de teste", "amount"=>81, "price"=>89.09}] flags=[]
                          COMMAND      database=myapp_development command={:getlasterror=>1, :w=>1} runtime: 0.3110ms
 Completed 200 OK in 3ms (Views: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2021-12-06 17:17:44 -0200
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /usr/local/bundle/gems/railties-4.0.0/lib/rails/templates/rails/welcome/index.html.erb (0.9ms)
+Completed 200 OK in 11ms (Views: 4.2ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2021-12-06 17:17:51 -0200
+Processing by ProductsController#index as HTML
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.5406ms
+  MOPED: 127.0.0.1:27017 QUERY        database=myapp_development collection=products selector={} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.2375ms
+Completed 200 OK in 11ms (Views: 0.4ms)

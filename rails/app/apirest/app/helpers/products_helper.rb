@@ -11,10 +11,6 @@ module ProductsHelper
   end
 
   def index_json(products)
-    json_to_render = []
-    products.each do |product|
-      json_to_render << show_json(product.to_json)
-    end
-    json_to_render
+    products.map do |product| show_json(product.to_json) end
   end
 end
