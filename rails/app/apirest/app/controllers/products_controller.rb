@@ -7,13 +7,13 @@ class ProductsController < ApplicationController
   end
 
   def show
-    render json: view_context.show_json(@product.to_json)
+    render json: view_context.show_json(@product)
   end
 
   def create
     @product = Product.new(product_params)
     if @product.save
-      render json: view_context.show_json(@product.to_json)
+      render json: view_context.show_json(@product)
     else
       render json: { 'menssage' => @product.errors }
     end
